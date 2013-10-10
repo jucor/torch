@@ -209,7 +209,8 @@ SET(SRC_LJCORE src/lj_gc.c src/lj_err.c src/lj_char.c src/lj_bc.c src/lj_obj.c
   src/lj_ctype.c src/lj_cdata.c src/lj_cconv.c src/lj_ccall.c src/lj_ccallback.c
   src/lj_carith.c src/lj_clib.c src/lj_cparse.c
   src/lj_lib.c src/lj_alloc.c src/lib_aux.c
-  ${SRC_LJLIB} src/lib_init.c src/luaconf.c)
+  ${SRC_LJLIB} src/lib_init.c src/luaconf.c
+  src/lj_strfmt.c src/lj_profile.c src/lj_buf.c)
 
 SET(SRC_BUILDVM src/host/buildvm.c src/host/buildvm_asm.c
 src/host/buildvm_peobj.c src/host/buildvm_lib.c src/host/buildvm_fold.c
@@ -293,4 +294,5 @@ CONFIGURE_FILE(cmake/LuaConfig.cmake.in "${Lua_INSTALL_FINDLUA_DIR}/FindLua.cmak
 INSTALL(FILES
   src/jit/bc.lua src/jit/v.lua src/jit/dump.lua src/jit/dis_x86.lua src/jit/dis_x64.lua src/jit/dis_arm.lua
   src/jit/dis_ppc.lua src/jit/dis_mips.lua src/jit/dis_mipsel.lua src/jit/bcsave.lua ${CMAKE_CURRENT_BINARY_DIR}/vmdef.lua
+  src/jit/p.lua src/jit/zone.lua
   DESTINATION "${Lua_INSTALL_LUA_PATH_SUBDIR}/jit")
